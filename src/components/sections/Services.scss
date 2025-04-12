@@ -1,0 +1,114 @@
+.services {
+  background-color: var(--light-gray);
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+
+    h2 {
+      color: var(--text-color);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+    }
+
+    p {
+      color: var(--dark-gray);
+      font-size: 1.1rem;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+      .service-icon {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 28px;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+
+    p {
+      color: var(--dark-gray);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .services-cta {
+    background-color: white;
+    padding: 60px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: var(--dark-gray);
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 40px 20px;
+    }
+  }
+}

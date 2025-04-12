@@ -1,0 +1,127 @@
+.case-studies {
+  background-color: white;
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+
+    h2 {
+      color: var(--text-color);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+    }
+
+    p {
+      color: var(--dark-gray);
+      font-size: 1.1rem;
+    }
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .case-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .case-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .case-category {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover .case-image img {
+      transform: scale(1.1);
+    }
+
+    .case-content {
+      padding: 25px;
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: var(--text-color);
+      }
+
+      .case-results {
+        margin-bottom: 15px;
+
+        .result-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          margin-bottom: 10px;
+
+          i {
+            color: var(--primary-color);
+            margin-top: 4px;
+          }
+
+          span {
+            font-size: 15px;
+            color: var(--dark-gray);
+          }
+        }
+      }
+
+      p {
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .case-studies-cta {
+    text-align: center;
+    margin-top: 40px;
+  }
+}

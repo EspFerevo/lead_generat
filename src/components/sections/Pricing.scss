@@ -1,0 +1,234 @@
+.pricing {
+  background-color: var(--light-gray);
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+
+    h2 {
+      color: var(--text-color);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+    }
+
+    p {
+      color: var(--dark-gray);
+      font-size: 1.1rem;
+    }
+  }
+
+  .pricing-guarantee {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    .guarantee-icon {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      background-color: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 36px;
+        color: var(--primary-color);
+      }
+    }
+
+    .guarantee-text {
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: var(--text-color);
+      }
+
+      p {
+        color: var(--dark-gray);
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .pricing-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    &.primary {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+      transform: scale(1.05);
+      z-index: 2;
+
+      @media (max-width: 991px) {
+        transform: none;
+        order: -1;
+      }
+
+      .pricing-header {
+        h3, p {
+          color: white;
+        }
+      }
+
+      .pricing-price {
+        .currency, .amount, .period {
+          color: white;
+        }
+      }
+
+      .pricing-features {
+        ul {
+          li {
+            color: rgba(255, 255, 255, 0.8);
+
+            i {
+              color: var(--accent-color);
+            }
+          }
+        }
+      }
+    }
+
+    .pricing-header {
+      padding: 30px;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .pricing-price {
+        margin-bottom: 20px;
+
+        .currency {
+          font-size: 24px;
+          font-weight: 700;
+          vertical-align: top;
+          position: relative;
+          top: 5px;
+        }
+
+        .amount {
+          font-size: 48px;
+          font-weight: 800;
+          line-height: 1;
+        }
+
+        .period {
+          font-size: 16px;
+          color: var(--dark-gray);
+        }
+      }
+
+      p {
+        color: var(--dark-gray);
+        font-size: 15px;
+      }
+    }
+
+    .pricing-features {
+      padding: 30px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          gap: 10px;
+          padding: 10px 0;
+          font-size: 15px;
+          color: var(--dark-gray);
+
+          i {
+            color: var(--primary-color);
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+
+    .pricing-action {
+      padding: 0 30px 30px;
+      text-align: center;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .pricing-custom {
+    background: linear-gradient(135deg, #f9f9f9 0%, #f3f4f6 100%);
+    border-radius: 10px;
+    padding: 50px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+
+    .custom-content {
+      max-width: 700px;
+      margin: 0 auto;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: var(--dark-gray);
+        margin-bottom: 25px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 40px 20px;
+    }
+  }
+}
